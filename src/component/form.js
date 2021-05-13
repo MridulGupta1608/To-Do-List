@@ -1,7 +1,13 @@
-import React from 'react'
+import React,{useEffect,useRef} from 'react'
 import {form} from 'react-bootstrap';
 const Form = ({setInputText,setStatus,inputText,todos,setTodos}) => {
 
+
+    const inputRef = useRef(null)
+
+    useEffect(() =>{
+        inputRef.current.focus()
+    })
 
     const inputTextHandler = (e) =>{
         setInputText(e.target.value);
@@ -24,7 +30,7 @@ const Form = ({setInputText,setStatus,inputText,todos,setTodos}) => {
       }
     return (
         <form>
-            <input value={inputText} onChange={inputTextHandler} type="text" className="todo-input"/>
+            <input value={inputText} onChange={inputTextHandler} ref={inputRef} type="text" className="todo-input"/>
             <button onClick={submitTodoHandler} className="todo-button" type="submit">
                 <i className="fas fa-plus-square"></i>
             </button>
