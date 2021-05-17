@@ -28,6 +28,13 @@ form button {
   border: none;
   background: white;
 }
+
+.inputbox{
+  display: flex;
+}
+
+
+
 form button {
   color: #ff6f47;
   background: #f7fffe;
@@ -55,7 +62,7 @@ form button:hover {
   font-size: 1.5rem;
   color: black;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   transition: all 1s ease;
 }
@@ -65,6 +72,8 @@ form button:hover {
 .todo li {
   flex: 1;
 }
+
+.fa-plus-square{}
 
 .trash-btn,
 .complete-btn {
@@ -79,12 +88,12 @@ form button:hover {
   background: rgb(11, 212, 162);
 }
 .todo-item {
-  padding: 0rem 0.5rem;
+  padding: 0rem 0.9rem;
 }
 
 .fa-trash,
 .fa-check {
-  pointer-events: none;
+  pointer-events:none;
 }
 
 .fall {
@@ -98,14 +107,13 @@ form button:hover {
 
 /*CUSTOM SELECTOR */
 select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-appearance: none;
-  appearance: none;
   outline: 0;
   box-shadow: none;
   border: 0 !important;
-  background-image: none;
+  color: #ff6f47;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  width: 12rem;
 }
 
 /* Custom Select */
@@ -115,10 +123,7 @@ select {
   overflow: hidden;
 }
 select {
-  color: #ff6f47;
-  font-family: "Poppins", sans-serif;
-  cursor: pointer;
-  width: 12rem;
+  
 }
 /* Arrow */
 .select::after {
@@ -132,8 +137,61 @@ select {
   pointer-events: none;
 }
 /* Transition */
-/*
-.select:hover::after {
-  transform: scale(1.5);
+
+/* .select:hover::after {
+  background: #ff6f47;
+  color: white;
+} */
+
+/* 
+@media (max-width:770px)
+{
+  .container,.media {
+    margin: 0 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+} */
+
+
+
+@media (max-width: 28.75em){
+
+  header,
+form {
+  flex-direction: column;
 }
-*/
+
+header{
+  font-size: 1rem;
+}
+
+select{
+  width:10rem;
+}
+
+form input, form button {
+  font-size: 1rem;
+  }
+
+  select{
+    height: 3rem;
+  }
+
+.todo{
+  font-size:1rem;
+}
+
+.todo-container{
+  margin-left: 0px;
+}
+
+div.todo:nth-child(1) {
+  margin-left: 0.5rem;
+  }
+
+.filter-todo{
+  padding:0.3rem;
+}
+}
